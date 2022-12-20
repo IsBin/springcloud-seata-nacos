@@ -1,0 +1,41 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /seata-stock
+
+spring:
+  application:
+    name: seata-stock
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/stock?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&autoReconnect=true&useSSL=false&verifyServerCertificate=false
+      username: binbin
+      password: binbin
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+
+# Mybatis mapper
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  typeAliasesPackage: com.seata.stock.entity
+
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: default_tx_group
+  # seata服务端的配置
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: "SEATA_GROUP"
+      namespace: "a9404f30-7fbc-4877-a7a4-fb4b5954df61"
+      username: "nacos"
+      password: "nacos123"

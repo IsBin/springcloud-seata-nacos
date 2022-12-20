@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.myseata</groupId>
+		<artifactId>seata-parent</artifactId>
+		<version>0.0.1</version>
+	</parent>
+	<packaging>jar</packaging>
+	<groupId>com.seata.order</groupId>
+	<artifactId>seata-order</artifactId>
+	<version>0.0.1</version>
+	<name>seata-order</name>
+	<description>seata-order</description>
+	<dependencies>
+
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.7.5</version>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
